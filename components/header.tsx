@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button"
 import { GearLogo } from "@/components/gear-logo"
 
 const navLinks = [
-  { href: "#catalog", label: "Catálogo" },
-  { href: "#workshop", label: "Taller" },
-  { href: "#about", label: "Nosotros" },
-  { href: "#contact", label: "Contacto" },
+  { href: "/#catalog", label: "Catálogo" },
+  { href: "/#workshop", label: "Taller" },
+  { href: "/nosotros", label: "Nosotros" },
+  { href: "/contacto", label: "Contacto" },
 ]
 
 export function Header() {
