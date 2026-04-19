@@ -1,0 +1,239 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Burnished Copper-Gold Primary - warm metal tones (UNCHANGED) */
+  --copper-gold: oklch(0.68 0.13 50);
+  --copper-gold-light: oklch(0.78 0.11 48);
+  --copper-gold-dark: oklch(0.52 0.15 52);
+  
+  /* Polished Steel Silver Secondary - cool metallic (UNCHANGED) */
+  --steel-silver: oklch(0.72 0.006 260);
+  --steel-silver-light: oklch(0.82 0.004 260);
+  --steel-silver-dark: oklch(0.55 0.008 260);
+
+  /* Light backgrounds */
+  --background: oklch(0.98 0.002 80);
+  --background-elevated: oklch(0.96 0.002 80);
+  --foreground: oklch(0.20 0.01 260);
+  
+  /* White cards with subtle warm tint */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.01 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.20 0.01 260);
+  
+  --primary: var(--copper-gold);
+  --primary-foreground: oklch(0.98 0 0);
+  
+  --secondary: oklch(0.95 0.003 80);
+  --secondary-foreground: oklch(0.25 0.01 260);
+  
+  /* Muted tones for subtle elements */
+  --muted: oklch(0.94 0.004 80);
+  --muted-foreground: oklch(0.50 0.008 260);
+  
+  --accent: oklch(0.92 0.004 80);
+  --accent-foreground: oklch(0.25 0.01 260);
+  
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  
+  /* Borders - subtle on light background */
+  --border: oklch(0.90 0.005 80);
+  --input: oklch(0.92 0.004 80);
+  --ring: var(--copper-gold);
+  --radius: 0.75rem;
+  
+  /* Dark charcoal for premium accents (header, footer, feature cards) */
+  --dark-surface: oklch(0.18 0.012 260);
+  --dark-surface-foreground: oklch(0.95 0 0);
+}
+
+.dark {
+  /* Override dark mode to use the same light scheme */
+  --background: oklch(0.98 0.002 80);
+  --background-elevated: oklch(0.96 0.002 80);
+  --foreground: oklch(0.20 0.01 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.01 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.20 0.01 260);
+  --primary: var(--copper-gold);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.95 0.003 80);
+  --secondary-foreground: oklch(0.25 0.01 260);
+  --muted: oklch(0.94 0.004 80);
+  --muted-foreground: oklch(0.50 0.008 260);
+  --accent: oklch(0.92 0.004 80);
+  --accent-foreground: oklch(0.25 0.01 260);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.90 0.005 80);
+  --input: oklch(0.92 0.004 80);
+  --ring: var(--copper-gold);
+}
+
+@theme inline {
+  --font-sans: var(--font-montserrat), 'Montserrat', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-dark-surface: var(--dark-surface);
+  --color-dark-surface-foreground: var(--dark-surface-foreground);
+  --animate-marquee: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-color: oklch(0.98 0.002 80);
+    /* Very subtle warm texture for depth */
+    background-image: 
+      radial-gradient(ellipse 120% 50% at 50% 0%, oklch(0.68 0.10 50 / 0.04) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+}
+
+/* Burnished Copper-Gold gradient for primary CTAs (UNCHANGED) */
+.gradient-primary {
+  background: linear-gradient(145deg, 
+    oklch(0.78 0.11 48) 0%, 
+    oklch(0.68 0.13 50) 40%, 
+    oklch(0.52 0.15 52) 100%
+  );
+  box-shadow: 
+    inset 0 1px 0 oklch(0.85 0.08 48 / 0.5),
+    0 2px 8px oklch(0.52 0.15 52 / 0.3);
+}
+
+.gradient-primary:hover {
+  box-shadow: 
+    inset 0 1px 0 oklch(0.85 0.08 48 / 0.5),
+    0 4px 16px oklch(0.52 0.15 52 / 0.5);
+}
+
+/* Steel silver border gradient */
+.gradient-border {
+  background: linear-gradient(145deg, 
+    var(--steel-silver-light) 0%, 
+    var(--steel-silver) 50%, 
+    var(--steel-silver-dark) 100%
+  );
+}
+
+/* Copper-gold text gradient (UNCHANGED) */
+.gradient-text {
+  background: linear-gradient(135deg, 
+    oklch(0.72 0.12 48) 0%, 
+    oklch(0.60 0.14 50) 50%, 
+    oklch(0.50 0.15 52) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark text for light backgrounds */
+.text-on-light {
+  color: oklch(0.20 0.01 260);
+}
+
+/* Muted text for secondary info on light bg */
+.gradient-text-silver {
+  background: linear-gradient(135deg, oklch(0.40 0.008 260) 0%, oklch(0.55 0.008 260) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark surface card for premium contrast sections */
+.card-dark {
+  background-color: oklch(0.18 0.012 260);
+  border-color: oklch(0.28 0.008 260);
+  color: oklch(0.95 0 0);
+}
+
+/* Clean white card with shadow */
+.card-light {
+  background-color: oklch(1 0 0);
+  border: 1px solid oklch(0.92 0.004 80);
+  box-shadow: 
+    0 1px 3px oklch(0.20 0 0 / 0.05),
+    0 4px 16px oklch(0.20 0 0 / 0.04);
+}
+
+.card-light:hover {
+  box-shadow: 
+    0 2px 8px oklch(0.20 0 0 / 0.08),
+    0 8px 32px oklch(0.20 0 0 / 0.06);
+  border-color: oklch(0.68 0.13 50 / 0.3);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Copper glow effect for interactive elements - softer on light bg */
+.copper-glow {
+  box-shadow: 0 0 20px oklch(0.68 0.13 50 / 0.2);
+}
+
+.copper-glow:hover {
+  box-shadow: 0 0 32px oklch(0.68 0.13 50 / 0.35);
+}
+
+/* Soft shadow for light bg */
+.steel-glow {
+  box-shadow: 
+    0 2px 12px oklch(0.20 0 0 / 0.06),
+    0 4px 24px oklch(0.20 0 0 / 0.04);
+}
+
+/* Industrial divider - adapted for light background */
+.industrial-divider {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    oklch(0.85 0.005 80) 20%, 
+    var(--copper-gold) 50%, 
+    oklch(0.85 0.005 80) 80%, 
+    transparent 100%
+  );
+  height: 1px;
+}
