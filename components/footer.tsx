@@ -95,7 +95,7 @@ export function Footer() {
             <h3 className="font-semibold text-white mb-4">Ubicación</h3>
             <div className="aspect-square rounded-xl overflow-hidden bg-[oklch(0.25_0.008_260)]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.5!2d-103.4!3d20.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDQyJzAwLjAiTiAxMDPCsDI0JzAwLjAiVw!5e0!3m2!1sen!2smx!4v1234567890"
+                src="https://maps.google.com/maps?q=Bicis+Del+Parque,+Emiliano+Zapata+156,+Zapopan&t=&z=16&ie=UTF8&iwloc=B&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -113,9 +113,14 @@ export function Footer() {
           <p className="text-sm text-white/40">
             © {new Date().getFullYear()} Bicis del Parque. Todos los derechos reservados.
           </p>
-          <p className="text-sm text-white/40">
-            Hecho con pasión en Zapopan, México
-          </p>
+          <a
+            href="https://escala-mas.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 text-white/60 hover:text-white text-sm font-medium transition-all duration-300"
+          >
+            Hecho por <span className="gradient-text font-bold">Escala+</span>
+          </a>
         </div>
       </div>
     </footer>
