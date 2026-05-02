@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
@@ -40,139 +41,98 @@ const values = [
   },
 ]
 
-const timeline = [
-  {
-    year: "2000",
-    title: "El Primer Pedalazo",
-    description: "Lo que empezó como una pasión personal por el ciclismo de montaña se convirtió en el sueño de compartir esa pasión con toda la comunidad de Zapopan.",
-  },
-  {
-    year: "2005",
-    title: "Nace Bicis del Parque",
-    description: "Abrimos nuestras puertas en la Col. Santa María del Pueblito con un pequeño taller y unas cuantas bicicletas. La calidad y el servicio hicieron el resto.",
-  },
-  {
-    year: "2012",
-    title: "Distribuidor Autorizado",
-    description: "Nos convertimos en distribuidores autorizados de Specialized, Santa Cruz y Trek. El reconocimiento a años de trabajo profesional y dedicación.",
-  },
-  {
-    year: "2018",
-    title: "Centro de Servicio Premium",
-    description: "Ampliamos nuestro taller con herramientas especializadas y certificaciones internacionales. Hoy somos referencia en servicio técnico en Jalisco.",
-  },
-  {
-    year: "Hoy",
-    title: "Tu Destino Ciclista",
-    description: "Más de 1,000 clientes satisfechos, 500+ servicios al año y un equipo de ciclistas profesionales listos para ayudarte a vivir tu mejor aventura.",
-  },
-]
-
 export default function NosotrosPage() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero */}
-      <section className="pt-28 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden">
+      {/* Hero with image collage */}
+      <section className="pt-28 pb-16 lg:pt-40 lg:pb-24 relative overflow-hidden">
         {/* Copper glow */}
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-primary/6 blur-[100px]" />
 
-        <div className="container mx-auto px-4 lg:px-8 text-center relative z-10">
-          <AnimatedSection>
-            <p className="text-sm text-primary font-medium tracking-[0.2em] uppercase mb-4">Sobre Nosotros</p>
-          </AnimatedSection>
-          <AnimatedSection delay={150}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="gradient-text">Nuestra Historia</span>
-            </h1>
-          </AnimatedSection>
-          <AnimatedSection delay={300}>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Desde un pequeño taller hasta convertirnos en el destino ciclista de referencia 
-              en Zapopan. Más de dos décadas dedicados a lo que más amamos: las bicicletas.
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="pb-20 lg:pb-28">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="text-center mb-12 lg:mb-16">
             <AnimatedSection>
-              <div className="bg-white rounded-2xl border border-border p-8 lg:p-10 shadow-sm h-full">
-                <div className="w-3 h-12 gradient-primary rounded-full mb-6" />
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Nuestra Misión</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Ser el aliado de confianza de cada ciclista en Zapopan, ofreciendo 
-                  bicicletas premium, servicio técnico de excelencia y una asesoría genuina 
-                  que nace de nuestra propia experiencia sobre dos ruedas.
-                </p>
-              </div>
+              <p className="text-sm text-primary font-medium tracking-[0.2em] uppercase mb-4">Sobre Nosotros</p>
             </AnimatedSection>
-            <AnimatedSection delay={200}>
-              <div className="bg-white rounded-2xl border border-border p-8 lg:p-10 shadow-sm h-full">
-                <div className="w-3 h-12 gradient-primary rounded-full mb-6" />
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Nuestra Visión</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Ser reconocidos como el centro ciclista más completo de Jalisco, donde 
-                  cada persona —desde el principiante hasta el competidor— encuentre la bici 
-                  perfecta, el mejor servicio y una comunidad que los impulse a pedalear más lejos.
-                </p>
-              </div>
+            <AnimatedSection delay={150}>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <span className="gradient-text">Nuestra Historia</span>
+              </h1>
+            </AnimatedSection>
+            <AnimatedSection delay={300}>
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Desde un pequeño taller hasta convertirnos en el destino ciclista de referencia 
+                en Zapopan. Más de dos décadas dedicados a lo que más amamos: las bicicletas.
+              </p>
             </AnimatedSection>
           </div>
-        </div>
-      </section>
 
-      {/* Timeline */}
-      <section className="pb-20 lg:pb-28 bg-accent/30">
-        <div className="container mx-auto px-4 lg:px-8 py-16 lg:py-24">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-                <span className="text-foreground">Nuestro </span>
-                <span className="gradient-text">Camino</span>
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-                Cada año nos ha traído nuevos retos y logros que nos hacen mejores.
-              </p>
+          {/* Image mosaic under hero text */}
+          <AnimatedSection delay={450}>
+            <div className="grid grid-cols-3 gap-3 lg:gap-4 max-w-4xl mx-auto">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+                <Image src="/community/ig-1.jpg" alt="Bici en exhibición" fill className="object-cover" />
+              </div>
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden -mt-6 lg:-mt-10">
+                <Image src="/community/ig-5.jpg" alt="Nuestra tienda" fill className="object-cover" />
+              </div>
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+                <Image src="/community/ig-3.jpg" alt="Cliente satisfecho" fill className="object-cover" />
+              </div>
             </div>
           </AnimatedSection>
+        </div>
+      </section>
 
-          <div className="max-w-3xl mx-auto relative">
-            {/* Vertical line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
+      {/* Mission & Vision with side image */}
+      <section className="py-20 lg:py-28">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+            {/* Image side */}
+            <AnimatedSection className="lg:col-span-2">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                <Image src="/community/ig-4.jpg" alt="Taller Bicis del Parque" fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-white/80 text-sm font-medium">Nuestro taller en Zapopan</p>
+                  <p className="text-white text-xl font-bold">+20 años de experiencia</p>
+                </div>
+              </div>
+            </AnimatedSection>
 
-            {timeline.map((item, index) => (
-              <AnimatedSection key={item.year} delay={index * 150}>
-                <div className={`relative flex items-start gap-6 md:gap-12 mb-12 last:mb-0 ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}>
-                  {/* Content */}
-                  <div className={`flex-1 ml-14 md:ml-0 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                    <div className="bg-white rounded-xl border border-border p-6 shadow-sm hover:shadow-md transition-shadow">
-                      <p className="text-sm font-bold text-primary tracking-wider mb-1">{item.year}</p>
-                      <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-
-                  {/* Dot */}
-                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full gradient-primary ring-4 ring-background mt-7" />
-
-                  {/* Spacer for alternating layout */}
-                  <div className="hidden md:block flex-1" />
+            {/* Text side */}
+            <div className="lg:col-span-3 space-y-6 lg:space-y-8">
+              <AnimatedSection delay={100}>
+                <div className="bg-white rounded-2xl border border-border p-8 lg:p-10 shadow-sm">
+                  <div className="w-3 h-12 gradient-primary rounded-full mb-6" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Nuestra Misión</h2>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    Ser el aliado de confianza de cada ciclista en Zapopan, ofreciendo 
+                    bicicletas premium, servicio técnico de excelencia y una asesoría genuina 
+                    que nace de nuestra propia experiencia sobre dos ruedas.
+                  </p>
                 </div>
               </AnimatedSection>
-            ))}
+              <AnimatedSection delay={250}>
+                <div className="bg-white rounded-2xl border border-border p-8 lg:p-10 shadow-sm">
+                  <div className="w-3 h-12 gradient-primary rounded-full mb-6" />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">Nuestra Visión</h2>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    Ser reconocidos como el centro ciclista más completo de Jalisco, donde 
+                    cada persona —desde el principiante hasta el competidor— encuentre la bici 
+                    perfecta, el mejor servicio y una comunidad que los impulse a pedalear más lejos.
+                  </p>
+                </div>
+              </AnimatedSection>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 lg:py-28">
+      {/* Values with image accent */}
+      <section className="py-20 lg:py-28 bg-accent/30">
         <div className="container mx-auto px-4 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -202,44 +162,62 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="pb-20 lg:pb-32">
+      {/* Stats with background image */}
+      <section className="py-20 lg:py-28 relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-8">
-          <AnimatedSection>
-            <div className="bg-white rounded-2xl border border-border p-8 lg:p-12 shadow-sm">
-              <div className="industrial-divider mb-8" />
-              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 rounded-full gradient-primary flex items-center justify-center mb-4 copper-glow">
-                    <Trophy className="h-7 w-7 text-primary-foreground" />
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Stats cards */}
+            <AnimatedSection>
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-bold mb-8">
+                  <span className="text-foreground">Números que </span>
+                  <span className="gradient-text">Hablan</span>
+                </h2>
+                <div className="grid grid-cols-2 gap-5">
+                  <div className="bg-white rounded-2xl border border-border p-6 shadow-sm text-center">
+                    <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center mb-3 mx-auto copper-glow">
+                      <Trophy className="h-6 w-6 text-primary-foreground" />
+                    </div>
+                    <h4 className="text-3xl font-bold gradient-text mb-1"><CountUp end={20} suffix="+" /></h4>
+                    <p className="text-muted-foreground text-sm">Años de Experiencia</p>
                   </div>
-                  <h4 className="text-3xl font-bold gradient-text mb-1"><CountUp end={20} suffix="+" /></h4>
-                  <p className="text-muted-foreground text-sm">Años de Experiencia</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 rounded-full gradient-primary flex items-center justify-center mb-4 copper-glow">
-                    <Medal className="h-7 w-7 text-primary-foreground" />
+                  <div className="bg-white rounded-2xl border border-border p-6 shadow-sm text-center">
+                    <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center mb-3 mx-auto copper-glow">
+                      <Medal className="h-6 w-6 text-primary-foreground" />
+                    </div>
+                    <h4 className="text-3xl font-bold gradient-text mb-1"><CountUp end={1000} suffix="+" /></h4>
+                    <p className="text-muted-foreground text-sm">Clientes Satisfechos</p>
                   </div>
-                  <h4 className="text-3xl font-bold gradient-text mb-1"><CountUp end={1000} suffix="+" /></h4>
-                  <p className="text-muted-foreground text-sm">Clientes Satisfechos</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 rounded-full gradient-primary flex items-center justify-center mb-4 copper-glow">
-                    <Star className="h-7 w-7 text-primary-foreground" />
+                  <div className="bg-white rounded-2xl border border-border p-6 shadow-sm text-center">
+                    <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center mb-3 mx-auto copper-glow">
+                      <Star className="h-6 w-6 text-primary-foreground" />
+                    </div>
+                    <h4 className="text-3xl font-bold gradient-text mb-1"><CountUp end={500} suffix="+" /></h4>
+                    <p className="text-muted-foreground text-sm">Servicios al Año</p>
                   </div>
-                  <h4 className="text-3xl font-bold gradient-text mb-1"><CountUp end={500} suffix="+" /></h4>
-                  <p className="text-muted-foreground text-sm">Servicios al Año</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-14 h-14 rounded-full gradient-primary flex items-center justify-center mb-4 copper-glow">
-                    <Shield className="h-7 w-7 text-primary-foreground" />
+                  <div className="bg-white rounded-2xl border border-border p-6 shadow-sm text-center">
+                    <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center mb-3 mx-auto copper-glow">
+                      <Shield className="h-6 w-6 text-primary-foreground" />
+                    </div>
+                    <h4 className="text-3xl font-bold gradient-text mb-1"><CountUp end={100} suffix="%" /></h4>
+                    <p className="text-muted-foreground text-sm">Garantía</p>
                   </div>
-                  <h4 className="text-3xl font-bold gradient-text mb-1"><CountUp end={100} suffix="%" /></h4>
-                  <p className="text-muted-foreground text-sm">Garantía</p>
                 </div>
               </div>
-            </div>
-          </AnimatedSection>
+            </AnimatedSection>
+
+            {/* Image collage */}
+            <AnimatedSection delay={200}>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
+                  <Image src="/community/ig-2.jpg" alt="Bici de montaña" fill className="object-cover" />
+                </div>
+                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg mt-8">
+                  <Image src="/community/ig-6.jpg" alt="Componentes premium" fill className="object-cover" />
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 

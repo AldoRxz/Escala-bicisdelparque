@@ -7,24 +7,24 @@ export function GearLogo({ className = "" }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        {/* Burnished copper-gold gradient with metallic shine */}
+        {/* Silver-platinum metallic gradient */}
         <linearGradient id="gearGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="oklch(0.82 0.10 48)" />
-          <stop offset="25%" stopColor="oklch(0.72 0.12 50)" />
-          <stop offset="50%" stopColor="oklch(0.68 0.13 50)" />
-          <stop offset="75%" stopColor="oklch(0.58 0.14 52)" />
-          <stop offset="100%" stopColor="oklch(0.52 0.15 52)" />
+          <stop offset="0%" stopColor="oklch(0.82 0.008 260)" />
+          <stop offset="25%" stopColor="oklch(0.72 0.01 260)" />
+          <stop offset="50%" stopColor="oklch(0.60 0.012 260)" />
+          <stop offset="75%" stopColor="oklch(0.45 0.015 260)" />
+          <stop offset="100%" stopColor="oklch(0.35 0.015 260)" />
         </linearGradient>
-        {/* Steel silver inner ring */}
+        {/* Steel inner ring */}
         <linearGradient id="steelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="oklch(0.78 0.008 260)" />
-          <stop offset="50%" stopColor="oklch(0.68 0.008 260)" />
-          <stop offset="100%" stopColor="oklch(0.58 0.012 260)" />
+          <stop offset="0%" stopColor="oklch(0.75 0.006 260)" />
+          <stop offset="50%" stopColor="oklch(0.60 0.008 260)" />
+          <stop offset="100%" stopColor="oklch(0.48 0.01 260)" />
         </linearGradient>
         {/* Subtle glow filter */}
         <filter id="copperGlow" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur" />
-          <feFlood floodColor="oklch(0.68 0.13 50)" floodOpacity="0.3" />
+          <feFlood floodColor="oklch(0.60 0.01 260)" floodOpacity="0.3" />
           <feComposite in2="blur" operator="in" />
           <feMerge>
             <feMergeNode />
@@ -38,11 +38,11 @@ export function GearLogo({ className = "" }: { className?: string }) {
         fill="url(#gearGradient)"
         filter="url(#copperGlow)"
       />
-      {/* Inner circle - dark industrial background */}
-      <circle cx="50" cy="50" r="25" fill="oklch(0.14 0.008 260)" />
+      {/* Inner circle - dark background */}
+      <circle cx="50" cy="50" r="25" fill="oklch(0.12 0.005 260)" />
       {/* Steel ring detail */}
       <circle cx="50" cy="50" r="22" fill="none" stroke="url(#steelGradient)" strokeWidth="1.5" />
-      {/* Center copper accent */}
+      {/* Center silver accent */}
       <circle cx="50" cy="50" r="8" fill="url(#gearGradient)" />
     </svg>
   )

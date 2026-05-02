@@ -2,7 +2,7 @@ import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { Catalog } from "@/components/catalog"
 import { Workshop } from "@/components/workshop"
-import { LiveInventory } from "@/components/live-inventory"
+import { Community } from "@/components/community"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 
@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       <Catalog />
       <Workshop />
-      <LiveInventory />
+      <Community />
       <Footer />
       <WhatsAppButton />
     </main>
